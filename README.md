@@ -1,1 +1,1 @@
-# spring-boot-skeleton
+# skeleton-spring-boot

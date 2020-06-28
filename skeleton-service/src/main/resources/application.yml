@@ -1,0 +1,10 @@
+server:
+  port: 8901
+
+spring:
+  mvc:
+    converters:
+      preferred-json-mapper: jackson
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true

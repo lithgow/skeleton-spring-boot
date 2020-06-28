@@ -1,0 +1,31 @@
+ext {
+
+    springBootVersion = '2.3.1.RELEASE'
+
+    libs = [
+            springBootStarterWeb      : "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+            springBootThymeLeafStarter: "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}",
+            jacksonDatatypeJsr310     : 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.0',
+
+            swagger                   : 'io.springfox:springfox-swagger2:2.9.2',
+            swaggerUI                 : 'io.springfox:springfox-swagger-ui:2.9.2',
+
+            gson                      : 'com.google.code.gson:gson:2.8.6', // this is to avoid a NoSuchMethodException
+            guava                     : 'com.google.guava:guava:29.0-jre',
+            jaxb                      : 'javax.xml.bind:jaxb-api:2.3.1',
+            jaxbruntime               : 'org.glassfish.jaxb:jaxb-runtime:2.3.2',
+            vavr                      : 'io.vavr:vavr:0.10.3',
+
+            test                      : [
+                    assertj              : 'org.assertj:assertj-core:3.16.1',
+                    jmock                : 'org.jmock:jmock-junit5:2.11.0',
+                    jsonAssert           : 'org.skyscreamer:jsonassert:1.5.0',
+                    junitApi             : 'org.junit.jupiter:junit-jupiter-api:5.6.2',
+                    junitEngine          : 'org.junit.jupiter:junit-jupiter-engine:5.6.2',
+                    mockito              : 'org.mockito:mockito-core:3.3.3',
+                    restAssured          : 'io.rest-assured:rest-assured:4.3.0',
+                    springBootStarterTest: "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+            ]
+    ]
+
+}

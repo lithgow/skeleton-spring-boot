@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'io.freefair.lombok' version '5.1.0'
+    id 'org.springframework.boot' version '2.3.1.RELEASE' apply false
+    id 'au.com.dius.pact' version '4.0.10' apply false
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+allprojects {
+    defaultTasks 'clean', 'build', 'jacocoTestReport'
+}
+
+subprojects {
+    group = 'com.example'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    apply from: "$rootDir/dependencies.gradle"
+
+    apply plugin: 'java'
+    apply plugin: 'jacoco'
+    apply plugin: 'io.freefair.lombok'
+
+    dependencies {
+        testImplementation libs.test.junitApi,
+                libs.test.assertj,
+                libs.test.jmock,
+                libs.test.mockito
+
+        testRuntimeOnly libs.test.junitEngine
+    }
+
+    ext {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

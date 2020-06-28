@@ -1,0 +1,19 @@
+plugins {
+    id 'org.springframework.boot'
+    id 'au.com.dius.pact'
+}
+
+dependencies {
+    implementation libs.jacksonDatatypeJsr310,
+            libs.springBootStarterWeb,
+            libs.swagger,
+            libs.swaggerUI
+
+    testImplementation libs.test.jsonAssert,
+            libs.test.restAssured,
+            libs.test.springBootStarterTest
+}
+
+lombok {
+    config['lombok.anyConstructor.addConstructorProperties'] = 'true'
+}
